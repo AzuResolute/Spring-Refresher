@@ -21,6 +21,10 @@ public class Main {
 
         log.info("randomly generated number = {}", number);
 
+        Game game = context.getBean(Game.class);
+
+        game.reset();
+
         context.close();
     }
 }

@@ -6,4 +6,7 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="numberGenerator" class="academy.learnprogramming.NumberGeneratorImpl"/>
+    <bean id="game" class="academy.learnprogramming.GameImpl">
+        <constructor-arg ref="numberGenerator"></constructor-arg>
+    </bean>
 </beans>
