@@ -1,10 +1,13 @@
-package academy.learnprogramming;
+package academy.learnprogramming.console;
 
+import academy.learnprogramming.AppConfig;
+import academy.learnprogramming.Game;
+import academy.learnprogramming.MessageGenerator;
+import academy.learnprogramming.NumberGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);

@@ -30,7 +30,7 @@ public class MessageGeneratorImpl implements MessageGenerator {
 
     @Override
     public String getResultMessage() {
-        return game.isGameWon() ? "You guess it! The number was" + game.getNumber() :
+        return game.isGameWon() ? "You guess it! The number was " + game.getNumber() :
             game.isGameLost() ? "You lost. The game was " + game.getNumber() :
                 !game.isValidNumberRange() ? "Invalid number range!" :
                     game.getRemainingGuesses() == guessCount ? "What is your first guess?" :

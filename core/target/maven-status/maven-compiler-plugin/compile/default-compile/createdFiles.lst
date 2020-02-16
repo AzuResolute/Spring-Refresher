@@ -1,5 +1,7 @@
 academy\learnprogramming\NumberGenerator.class
+academy\learnprogramming\MessageGenerator.class
 academy\learnprogramming\Game.class
 academy\learnprogramming\GameImpl.class
-academy\learnprogramming\Main.class
+academy\learnprogramming\MessageGeneratorImpl.class
+academy\learnprogramming\AppConfig.class
 academy\learnprogramming\NumberGeneratorImpl.class
