@@ -3,27 +3,30 @@ package academy.learnprogramming;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
-    private static final String CONFIG_LOCATION = "beans.xml";
 
     public static void main(String[] args) {
         log.info("Guess the number game, activate!");
 
         ConfigurableApplicationContext context =
-                new ClassPathXmlApplicationContext(CONFIG_LOCATION);
+                new AnnotationConfigApplicationContext(AppConfig.class);
 
-        NumberGenerator numGen = context.getBean("numberGenerator", NumberGenerator.class);
+        NumberGenerator numGen = context.getBean(NumberGenerator.class);
 
         int number = numGen.next();
 
         log.info("randomly generated number = {}", number);
 
-        Game game = context.getBean(Game.class);
+        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
 
-        game.reset();
+        log.info("getMainMessage = {}", messageGenerator.getMainMessage());
+        log.info("getResultMessage = {}", messageGenerator.getResultMessage());
+
+        Game game = context.getBean(Game.class);
 
         context.close();
     }
