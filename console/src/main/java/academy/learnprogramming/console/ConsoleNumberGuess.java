@@ -15,11 +15,14 @@ import java.util.Scanner;
 public class ConsoleNumberGuess {
     private static final Logger log = LoggerFactory.getLogger(ConsoleNumberGuess.class);
 
-    @Autowired
-    private MessageGenerator messenger;
+    private final MessageGenerator messenger;
+    private final Game game;
 
     @Autowired
-    private Game game;
+    public ConsoleNumberGuess(MessageGenerator messenger, Game game) {
+        this.messenger = messenger;
+        this.game = game;
+    }
 
     @EventListener(ContextRefreshedEvent.class) /* You can define the event type class here if not used */
     public void start() {
